@@ -1,0 +1,25 @@
+  GNU nano 4.9.3                                  ptr1.c
+#include <stdio.h>
+
+int main(void) {
+    int n, *p;
+
+    n = 151;
+
+    p = &n;
+    // can also do it as:
+    // int *p = &n;
+
+    printf("sizeof int is %lu, sizeof int* is %lu\n", sizeof(int),
+            sizeof(int*));
+    printf("n is %d, p is %p\n", n, p);
+
+    printf("the value p is pointing to is %d\n", *p);
+
+    printf("n's address is %p\n", &n);
+
+    printf("p's address is %p\n", &p);
+
+    printf("p+1 address is %p, value is %d\n", (p+1), *(p+1));
+    return(0);
+}

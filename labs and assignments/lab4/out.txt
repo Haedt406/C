@@ -1,0 +1,37 @@
+Hurricanes in Florida with category and date
+____________________________________________
+Agnes     		1	19-Jun
+Alma      		2	9-Jun
+Andrew    		5	24-Aug
+Betsy     		3	8-Sep
+Charley   		4	13-Aug
+Cleo      		2	27-Aug
+David     		2	3-Sep
+Dennis    		3	10-Jul
+Donna     		4	10-Sep
+Dora      		2	10-Sep
+Earl      		1	3-Sep
+Easy      		3	5-Sep
+Elena     		3	1-Sep
+Eloise    		3	23-Sep
+Erin      		2	3-Aug
+Florence  		1	26-Sep
+Flossy    		1	24-Sep
+Floyd     		1	12-Oct
+Frances   		2	5-Sep
+Georges   		2	25-Sep
+Gladys    		2	19-Oct
+Hazel     		1	9-Oct
+Hermine   		1	2-Sep
+Inez      		1	8-Oct
+Irene     		1	15-Oct
+Isbell    		2	14-Oct
+Ivan      		3	16-Sep
+Jeanne    		3	26-Sep
+Kate      		2	21-Nov
+Katrina   		1	25-Aug
+King      		4	18-Oct
+Matthew   		2	7-Oct
+Opal      		3	4-Oct
+Rita      		1	20-Sep
+Wilma     		3	24-Oct
