@@ -1,0 +1,46 @@
+Chapter 10 - CSCI112
+
+Week 10
+Introduction
+ Show student.h
+
+ Show struct1.c with declaring variables of type student_t
+
+ Show struct2.c to show the . operator using printing
+   run struct2
+
+ Discuss examples of structures: names and phone numbers
+ 
+ practice: create a structure for lat and lon for Museum of the rockies 
+and print value
+
+Arrays of structs
+ show struct5.c and student.h to show how to work with an array of structures
+
+ show struct6.c and student_arr.h to show how to work with arrays within an array of structures
+
+Passing a structure to a function and compare two structs
+ show struct7.c to show how to pass a structure as input
+
+ show struct8.c showing how to compare two structures
+
+ practice: modify struct8.c to return a boolean from student_equal()
+ instead of passing back an integer (0 or 1) - my solution to this
+ is struct8_bool.c
+
+Week 11
+ show struct9.c to show how to read in a structure and how to deal with a pointer to a structure
+
+ show struct10.c to show that using (*studnt).name is the same as studnt->name
+
+ practice: read in information for our location structure and print the structure out
+
+ show struct11.c to show how to return a data structure
+
+ show struct12.c and how the input and output work
+
+ practice: create a structure for a fraction: numerator, denominator and real value
+    write a function for passing in as structure and passing back the fraction in the simplest 
+    terms. show prac3.c first (recursion) then prac4.c
+
+

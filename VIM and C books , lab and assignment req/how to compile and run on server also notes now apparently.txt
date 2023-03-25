@@ -1,0 +1,360 @@
+$ gcc –o extra -Wall extra.c
+•Run your executable program from the command line as follows:
+•$ ./extra
+•Run with degugging enabled, gcc -o extra -Wall extra.c -g
+
+with math library -lm -fun_ex3.c during compile
+
+file redirection ./filename < input.txt > output.txt
+
+array declaration
+
+float array[size];
+int array[size] = {1,3,4, etc...};
+int array[5] = {0 ... 4 } = 1};
+
+or
+
+float *array = malloc(sizeof(float)*200);
+int *array = malloc(sizeof(int) * 200);
+
+pass an array into a function and return the new refernce address...
+
+add fun(arr1, etc...){
+return
+}
+
+const means input when sent into a function, it cant be changed and if it is it is a local variable, pass-by-value
+
+example 
+#include <stdio.h>
+
+void myfun(int *var1, int var2){
+//void myfun(int var1[], int var2){
+
+ 	for(int i = 0; i < var2; x++){
+		printf("Value of var_arr[%d] is: %d\n", i,var1[i]);
+		i++;
+	}
+}
+
+int main(){
+	int var_arr[] = {11,22,33,44,55,66,77);
+	myfun(var_array,7);
+	return 0;
+}
+		
+conditional operator
+
+	a < b ? printf("a is less then b\n") : printf("b is less than or equal to a\n");
+
+Make File or make, makefile
+
+lab2:main.o compute.o print.o
+	gcc -o lab2 main.o compute.o print.o
+
+main.o: main.c
+	gcc -c -g -Wall main.c
+
+compute.o: compute.c
+	gcc -c -g -Wall compute.c
+
+print.o: print.c
+	gcc -c -g -Wall print.c
+
+In command line, make and hit enter
+
+
+pointer is 8 bytes
+
+IMPORTANT: DO NOT use any argv or envp values directly in calls to system()! This is a huge security hole as malicious users could set environment variables to command-line commands and (potentially) cause massive damage. In general, just don't use system(). There is almost always a better solution implemented through C libraries.
+
+loop in script
+for num in {1...3}
+do
+	echo $num
+	./lab2
+done
+
+arr and&arr[0] point to the same address
+int *p;
+int arr[5];
+
+p = arr; // this is the same
+p = &arr[0]; //as this
+a[i] is the same as *(a+i)
+
+int a[10];//what is the type of a?, it is a int array or int pointer
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+int x = 5;
+
+int *p;
+p = &x;
+int **q=&p;
+int *q=p;
+printf("%d %d %d \n", x *p, **q);
+//output is 5 5 5 
+printf("%p %p %p\n", &x, p, *q);//output is 5100 5100 5100
+
+How to accept an element in a 2d array:
+a[i][j]
+*(a[i] +j)
+(*(a+i))[j]
+*((*(a + i)) +j)
+
+What is the type of a?
+int **p =a; a is a integer pointer pointer, integer 2d array
+
+what is the type of a[0]?
+int *q = a[0]; integer pointer, element is a integer
+
+what is the type of a[0][0]?
+int r=a[0][0];
+
+If you do not assign a value (address) to a pointer, it will contain the value that it already had when the program started
+
+addresses are numbered starting at zero, by convention, address zero represents the "null" pointer, int*p = null;
+
+a pointer points to the beginning of a memory cell
+
+"*" (asterisk) tells the compiler that the new variable is a pointer, also used for indirection, indirectly referencing a value
+"&" is the address operator which returns the memory address of a variable
+-used to assign an address to a pointer,
+-"&n" should be read as "address of n"
+
+int n = 151;		0x5100| 151| n
+int *p;			0x5104| 5100 | p
+p = &n;
++++++++++++++++++++++++++++++++++++++++++
+
+int x = 3;	0x5100| 3| x
+int y = 5;	0x5104| 5| y
+int *p;		0x5108|  | p
+
+p = &x; // what is the value of p? 5100
+y = *p; // what is the value of y? 3	
+*p = 13; // what is the value of p now?	5100, after this is ran x becomes 13
+
+malloc and calloc - in stdlib.h
+https://www.tutorialspoint.com/c_standard_library/stdlib_h.html
+int *a;
+a = malloc(sizeof(char) * 15);
+a = calloc(15, sizeof(char));
+calloc allocates the requested memory and returns a pointer to it. the difference in malloc and calloc is that malloc does not set the memory to zero where as calloc sets allocated memory to zero.
+malloc takes one argument and calloc takes 2
+unsigned char has 1 byte
+
+to free memory (garbage collector) use free(variable or reference)
+
+we use pointers to...
+-to pass values by refernece
+-to access arrays effectively
+-to allocate memory dynamically
+-to define complex data structures
+
+given:
+int m = 25, n = 77;
+char c = '*';
+int *itemp;
+//what errors do you see?
+m = &n;   m is not a pointer, it cannot take the address
+itemp = m;  trying to assign an int to the pointer, different size
+*itemp = c; trying to assign a character to a pointer, differnt size, trying to take one byte and put it into 4 bytes
+*itemp = &c; trying to set an address into an integer
+
+file library fgets, fprintf, etc in wednesday 9-30 video, 15min+, also help with lab4
+
+strcat concatinates strings in the string array, ex...
+char* mystr = (char*)malloc(sizeof(char) *80);
+strcat(mystr, "this ");
+strcat(mystr, "is ");
+printf("mystr is %s\n", mystr);
+//prints "mystr is this is "
+strcmp compares two stings
+
+-what will this print?
+
+chara[] = "Blue";
+char b[] = "Black";
+if (*a == *b){
+	print("Equal\n");
+}
+else{ print"Not Equal\n");}
+
+//will print equal because they both start with B, *a and *b says to look at the first character
+
+asum[i] = a1[i] + a2[i]; // is equivalent to// *(asum+i) = *(a1+i) + *(a2+i);
+
+Structs and stuff, there are 2 ways to do a struck
+
+the difference between this and a class in C++ and Java is it doesn't have methods associated with it
+
+*syntax
+typedef struct {
+	<type><id>;
+	<type><id>;
+	...
+}<name of strucutre data type>;
+
+the first way to define a struct is...
+struct Planet {
+	char name[70];
+	double diameter;
+	int moons;
+	double orbit_time, rotation_time;
+}; 
+//in a function
+struct Planet p1, p2;
+
+the second way to define a struct, mary's prefered method
+typedef struct{
+	char name[70];
+	double diameter;
+	int moons;
+	double orbit_time, rotation_time;
+}Planet;
+//in a function
+Planet p1, p2; 
+//the way you assign type of values to your data that is inside your struct, if its a scalar, not a pointer
+p1.moons = 16;
+strcpy(p1.name, "Jupiter"); //use strcpy to assign a character array or char string
+
+p2 = p1;
+printf("%s %ls %d", p1.name, p1.diameter, p1.moons); //for a text file you have to print each data attribute inside our struct with a printf, if you print a binary file you can print the whole struct at once
+
+add to an array...
+typedef struct {
+	char name[70];
+	double diameter;
+	int moons;
+	double orbit_time;
+	rotation_time;
+	} Planet;
+
+//in a function
+Planet planets[20];
+int i;
+for (i=0; i<20;i++){
+	strcpy(planets[i].name, "none");
+	planets[i].moons = 0;
+	...
+}
+
+//A struct as a pointer
+
+typedef struct{
+	char name[70];
+	double diameter;
+	int moons;
+	double orbit_time, rotation_time;
+	} Planet;
+//in main
+Planet p1;
+setPlanet(&p1);
+....
+
+void setPlanet(Planet *p){ //this passes by reference
+	p->moons = 0;
+	strcpy(p->name, "none);
+	...
+}
+
+//a structure passed by value
+
+typedef struct{
+	char name[70];
+	double diameter;
+	int moons;
+	double orbit_time, rotation_time;
+	} Planet;
+//in main
+Planet p1;
+...
+printPlanet(p1);
+...
+}
+void printPlanet(Planet p){
+	print("name is %s\n", p.name);
+	...
+}
+
+fill an array with structs
+// declaring a single student
+student_t mac = {"mary ann cummings", 1, 11, 'j'};
+
+// declaring an array of students
+student_t c112[4] = {
+	{"jane doe", 1, 23, 's'}, 
+	{"john doe", 2, 44, 'f'}
+	};
+
+//struct12.c explained
+how much space does it take up? 
+
+typedef struct {
+char name[40]; //takes up 40 bytes
+int id, credits; //4 bytes for each
+char year; //1 byte for char
+//so total it takes up 49 bytes
+//all pointers are 8 bytes
+
+typedef struct {
+char *name; //8 bytes for the pointer
+int id, credits; //4 bytes for each
+char year; //1 byte for char
+} Student_t;
+} Student_t;
+
+
+•
+In main:
+–
+Student _t st_read; // Address is 59c0
+–
+st_read= StudentScan(); // st_readkeeps 59c0
+•
+In StudentScan():
+–
+Student_tstudnt; // Address is 5860
+–
+// name: 5860 (first element in struct) –same address as studnt
+–
+// id: 5888 (5860+28Hex(40)) year, 588c (5888+4), year: 5890 (588c+4)
+•
+Back in main:
+–
+Student_tst_upd; // Address is 5980
+–
+st_upd= student_update_credits(st_read);
+•
+In student_update_credits(Student_tst) { // st(input param) has address: 5900)
+–
+-st.credits+= 15;
+–
+return st; // stis local and output (as st_read) –not the same as st_readwhich was input to this function
+•
+Back in main:
+–
+// &st_read.name: 59c0 (first element in struct) –same address as st_read, &st_upd.name: 5980 (same as st_upd)
+–
+// st_read.name: 59c0 –same address as st_read, st_upd.name: 5980 (same as st_upd)
+–
+st_read.credits–12 (as read in)
+–
+st_upd.credits–27 (12 + 15)
+
+__________________________________________________
+File input/output
+
+using redirection the redirect standard out (stdout) using greater then sign printf();
+redirect standard input (stdin) using the less then sign scanf();
+its the operating system not the program that deals with that
+
+redirecting stderr. redirects standard error
+Redirect stderr by adding the '2>' character, followed by the name of the file to redirect to
+$ ./program >output_file.txt 2 > error.txt
+
+Binary file function calls
+the functions we use with binary file, fopen does not change, but we use different modes
+
+
